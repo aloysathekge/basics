@@ -16,6 +16,6 @@ print(result)
 
 # # What I learned
 
-# 1. dict.items() returns dictionary
-# 2. key in sorted function is used to determine how we sort
-# 3. word_counts[word] = word_counts.get(word, 0) + 1 =>
+# 1. dict.items() returns a list-like object of dictionary's key-value tuple pairs
+# 2. key in sorted function is used to determine how we sort (in this case, by word frequency in descending order and then alphabetically)
+# 3. word_counts[word] = word_counts.get(word, 0) + 1 => increments the word count for each occurrence, using get() to handle the case where the word is not yet in the dictionary
