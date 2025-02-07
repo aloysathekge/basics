@@ -1,22 +1,30 @@
-def find_bots(follow_graph, threshold=6):
+def find_bots(follow_graph, threshold=2):
     """
-    Returns accounts following ≥ threshold accounts but having ≤ 10 followers
+    Returns accounts following ≥ threshold accounts but having ≤ 3 followers
     """
-    followers_list = []
-    following_list = []
-
     for user, follow in follow_graph.items():
-        for item, handles in follow.items():
+        bot = []
+        following_sets = follow["following"]
+        followers_sets = follow["followers"]
 
-            if item == "following":
-                print(f"{user}: has {handles} following them")
-            elif item == "followers":
-                print(f"{user}: is following this {handles} accounts")
+        following_count = len(following_sets)
+        followers_count = len(followers_sets)
 
-def suggest_connections(user_a, user_b)
+        if following_count >= threshold and followers_count <= 3:
+            bot.append(user)
 
-        """Returns followers of user_b that user_a doesn't follow
-        """
+        return bot
+
+
+def suggest_connections(user_a, user_b):
+    """Returns followers of user_b that user_a doesn't follow"""
+
+    for user , follow in  social_graph:
+        
+
+
+
+
 
 social_graph = {
     "user1": {"following": {"user2", "user3"}, "followers": {"user2", "user4"}},
@@ -34,4 +42,4 @@ social_graph = {
     },
 }
 
-find_bots(social_graph)
+print(find_bots(social_graph))
