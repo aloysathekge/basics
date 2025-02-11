@@ -1,0 +1,5 @@
+apple,10,0.5
+banana,20,0.25
+apple,5,0.5
+orange,15,0.75
+banana,10,0.25
