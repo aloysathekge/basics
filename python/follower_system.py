@@ -18,17 +18,25 @@ def find_bots(follow_graph, threshold=2):
 
 def suggest_connections(user_a, user_b):
     """Returns followers of user_b that user_a doesn't follow"""
-    followers_in_a = []
+    followers_a = social_graph[user_a]["followers"]
+    following_b = social_graph[user_b]["following"]
 
-    for user, follow in social_graph.items():
+    suggested_conn = followers_a - following_b
 
-        if user == user_a:
-            following_a_sets = follow["following"]
-            followers_a_sets = follow["followers"]
-        if user == user_b:
-            following_b_sets = follow["following"]
-            followers_b_sets = follow["followers"]
-    print(followers_b_sets.difference(following_a_sets))
+    return suggested_conn
+
+
+# ind_mutual_followers(follow_graph, user_a, user_b)
+#  that returns a set of users who are following both user_a and user_b.
+
+
+def find_mutual_followers(follow_graph, user_a, user_b):
+    """Return mutual followers for user_a and user_b"""
+    following_a = social_graph[user_a]["following"]
+    following_b = social_graph[user_b]["following"]
+
+    mutual = following_a & following_b
+    return mutual
 
 
 social_graph = {
@@ -48,4 +56,5 @@ social_graph = {
 }
 
 # print(find_bots(social_graph))
-suggest_connections("user1", "user2")
+print(suggest_connections("user1", "user2"))
+print(find_mutual_followers(social_graph, "user3", "user2"))
