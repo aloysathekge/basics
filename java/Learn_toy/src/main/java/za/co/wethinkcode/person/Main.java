@@ -3,23 +3,21 @@ package za.co.wethinkcode.person;
 public class Main {
     public static void main(String[] args) {
 
-//        first lets create a world
 
-        World robotWold=new World(5,5);
+        World world1 = new World(5, 6);
 
-        Robot myRobot=new Robot(2,2,robotWold);
+        Robot robot1 = new Robot(2, 2, world1);
 
-        System.out.println(myRobot.getPosition());
+        System.out.println( robot1.getPosition());
+        robot1.Move(2, 1);
+        System.out.println( robot1.getPosition());
+        robot1.Move(10, 10);
+        System.out.println( robot1.getPosition());
 
-        myRobot.move(1,0);
-        System.out.println(myRobot.getPosition());
-        myRobot.move(1,1);
-        System.out.println(myRobot.getPosition());
-        myRobot.move(1,20);
-        System.out.println(myRobot.getPosition());
+
+
+
+
+
     }
-
-
-
-
 }
