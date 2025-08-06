@@ -39,3 +39,5 @@ def power(base, exponent):
 
 
 print(registry.run("multiply", 5, 7))
+
+print(registry.run("power", 8, 2))
