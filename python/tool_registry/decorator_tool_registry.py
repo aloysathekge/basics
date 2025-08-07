@@ -29,8 +29,8 @@ registry = Decorator_registry()
 
 
 @registry.tool("multiply")
-def multiply(a, b):
-    return a * b
+def multiply(a, b,c ):
+    return a * b* c
 
 
 @registry.tool("power")
@@ -38,6 +38,6 @@ def power(base, exponent):
     return base**exponent
 
 
-print(registry.run("multiply", 5, 7))
+print(registry.run("multiply", 5, 7,2))
 
 print(registry.run("power", 8, 2))
