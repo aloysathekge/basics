@@ -37,4 +37,10 @@ class MetadataRegistry:
     def get_tool_info(self, name: str) -> ToolInfo:
         return self.tools.get(name)
     
-    
+registry=MetadataRegistry()
+
+@registry.register_tool(name="multiply", description="Multiplies two numbers", category="math")
+def multiply(a,b):
+    """ Multiply two numbers"""
+    return a*b
+
